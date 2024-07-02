@@ -25,7 +25,7 @@ const invoiceRouter = require('./routes/invoicesRoutes');
 app.use(cors())
 app.use(bodyParser.json());
 
-app.use('/adrress', addressRouter);
+app.use('/address', addressRouter);
 app.use('/invoices', invoiceRouter);
 
 // starting the server

@@ -25,21 +25,21 @@ router.post('/create', function (req, res) {
 
   // kulcsok
   const keys = [
-    "name",
-    "postal_code",
-    "address",
-    "phone",
-    "city",
+    "name", 
+    "postal_code", 
+    "address", 
+    "phone", 
+    "city", 
     "same_data",
     "measuring_point"
   ]
-  sql += " (null,"
+sql += " (null,"
 
   // ellenőrzi a kulcsokat
   for (let i = 0; i < keys.length; i++) {
     if (req.body.hasOwnProperty(keys[i])) sql += `"${req.body[keys[i]]}",`
   }
-  sql += " null,null)"
+sql += " null,null)"
 
   db.query(sql, function (err, data, fields) {
     if (err) throw err;
